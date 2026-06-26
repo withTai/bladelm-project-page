@@ -3,20 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
+
   <meta name="title" content="BladeLM: Towards Generalizable, Explainable and Fine-Grained Wind Turbine Blade Diagnosis with MLLMs">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="Defect Diagnosis, Multimodal Large Language Models, Wind Turbine Blades, Visual Agent, Post-training">
-  <!-- TODO: List all authors -->
+  <meta name="description" content="BladeLM is a tool-augmented MLLM framework for explainable wind turbine blade diagnosis, with WTB-Bench and strong zero-shot results.">
+  <meta name="keywords" content="Wind Turbine Blade Inspection, Defect Diagnosis, Multimodal Large Language Models, Visual Agent, Tool-Augmented Reasoning, WTB-Bench, Industrial Anomaly Detection, Reinforcement Learning, Chain-of-Thought">
   <meta name="author" content="Jingtai He, Xingjian Kang, Siming Sun, Shiyuan Meng, Qinmin Yang, Wenchao Meng">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
-  <!-- Academic/Research Specific -->
+
   <meta name="citation_title" content="BladeLM: Towards Generalizable, Explainable and Fine-Grained Wind Turbine Blade Diagnosis with MLLMs">
   <meta name="citation_author" content="He, Jingtai">
   <meta name="citation_author" content="Kang, Xingjian">
@@ -24,377 +18,757 @@
   <meta name="citation_author" content="Meng, Shiyuan">
   <meta name="citation_author" content="Yang, Qinmin">
   <meta name="citation_author" content="Meng, Wenchao">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Preprint">
+  <meta name="citation_pdf_url" content="https://withtai.github.io/bladelm-project-page/static/pdfs/paper.pdf">
+
+  <meta name="theme-color" content="#0f766e">
+  <meta name="msapplication-TileColor" content="#0f766e">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://ajax.googleapis.com">
   <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-
-  <!-- TODO: Replace with your paper title and authors -->
   <title>BladeLM: Towards Generalizable, Explainable and Fine-Grained Wind Turbine Blade Diagnosis with MLLMs</title>
-  
-  <!-- Favicon and App Icons -->
-  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-   -->
-  <!-- Critical CSS - Load synchronously -->
+
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
+
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
+
   <noscript>
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
-  <!-- Fonts - Optimized loading -->
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
+
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "BladeLM: Towards Generalizable, Explainable and Fine-Grained Wind Turbine Blade Diagnosis with MLLMs,
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "headline": "BladeLM: Towards Generalizable, Explainable and Fine-Grained Wind Turbine Blade Diagnosis with MLLMs",
+    "description": "BladeLM is a tool-augmented MLLM framework for explainable wind turbine blade diagnosis, with WTB-Bench and strong zero-shot results.",
     "author": [
       {
         "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
+        "name": "Jingtai He",
+        "email": "heatai@zju.edu.cn",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Zhejiang University"
         }
       },
       {
         "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
+        "name": "Xingjian Kang",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Zhejiang University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Siming Sun",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Zhejiang University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Shiyuan Meng",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Zhejiang University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Qinmin Yang",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Zhejiang University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Wenchao Meng",
+        "email": "wmengzju@zju.edu.cn",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Zhejiang University"
         }
       }
     ],
-    "datePublished": "2024-01-01",
+    "datePublished": "2026",
     "publisher": {
       "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
+      "name": "Zhejiang University"
     },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
+    "url": "https://withtai.github.io/bladelm-project-page",
+    "image": "https://withtai.github.io/bladelm-project-page/static/images/teaser.png",
+    "keywords": [
+      "Wind turbine blade inspection",
+      "Defect diagnosis",
+      "Multimodal large language models",
+      "Visual agent",
+      "Tool-augmented reasoning",
+      "Industrial anomaly detection"
+    ],
+    "abstract": "Wind turbine blade image inspection is commonly formulated as closed-set defect detection, which limits its generalization and provides little diagnostic explanation. BladeLM reformulates WTB inspection as reasoning-driven cognitive diagnosis by combining global inspection, visual tool use, localized evidence acquisition, and structured reasoning.",
+    "citation": "@article{he2026bladelm, title={BladeLM: Towards Generalizable, Explainable and Fine-Grained Wind Turbine Blade Diagnosis with MLLMs}, author={He, Jingtai and Kang, Xingjian and Sun, Siming and Meng, Shiyuan and Yang, Qinmin and Meng, Wenchao}, journal={Preprint}, year={2026}}",
     "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
       "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
+      "@id": "https://withtai.github.io/bladelm-project-page"
+    }
   }
   </script>
-  
-  <!-- Website/Organization Structured Data -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
+    "name": "Zhejiang University",
+    "url": "https://www.zju.edu.cn/english/"
   }
   </script>
 </head>
 <body>
-
-
   <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">BladeLM: Towards Generalizable, Explainable and Fine-Grained Wind Turbine Blade Diagnosis with MLLMs</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Jingtai He</a>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Xingjian Kang</a>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Siming Sun</a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Shiyuan Meng</a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Qinmin Yang</a>,
-                  </span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Wenchao Meng</a>
-                  </span>
-                  </div>
+    <section class="hero publication-header">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">BladeLM: Towards Generalizable, Explainable and Fine-Grained Wind Turbine Blade Diagnosis with MLLMs</h1>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Zhejiang University</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
-                  </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><a href="FIRST AUTHOR PERSONAL LINK">Jingtai He</a>,</span>
+                <span class="author-block"><a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Xingjian Kang</a>,</span>
+                <span class="author-block"><a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Siming Sun</a>,</span>
+                <span class="author-block"><a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Shiyuan Meng</a>,</span>
+                <span class="author-block"><a href="FIFTH AUTHOR PERSONAL LINK" target="_blank">Qinmin Yang</a>,</span>
+                <span class="author-block"><a href="SIXTH AUTHOR PERSONAL LINK" target="_blank">Wenchao Meng</a></span>
+              </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Zhejiang University</span>
+                <!-- <span class="publication-venue">Preprint, 2026</span> -->
+              </div>
 
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
                     <span>Code</span>
                   </a>
                 </span>
 
-                <!-- TODO: Update with your arXiv paper ID -->
-                <!-- <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span> -->
-
-            <!-- Dataset -->
-              <span class="link-block">
-                  <a href="https://huggingface.co/ProbeX" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon" style="vertical-align: middle; font-size: 20px;">&#129303;</span>
-                      <span style="vertical-align: middle;">Benchmark</span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon benchmark-icon" aria-hidden="true">&#129303;</span>
+                    <span>Benchmark</span>
                   </a>
-              </span> 
-
-
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        To Be Updated: Demo of BladeLM.
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            Wind turbine blade (WTB) images inspection is commonly formulated as closed-set defect detection, which limits its generalization and provides little diagnostic explaination. Although multimodal large language models (MLLMs) offer open-ended visual reasoning, they often miss subtle defects and produce coarse-grained answers in industrial inspection scenarios. To address these limitations, we propose BladeLM, a visual tool-augmented MLLM framework that reformulates WTB inspection as reasoning-driven cognitive diagnosis. BladeLM first inspects the global image, invokes visual tools to acquire localized evidence, and then reasons over observations to produce diagnosis. To train this behavior, we design a data-centric post-training pipeline with 8k curated Chain-of-Thought trajectories for supervised fine-tuning and 4k closed-ended visual question-answering samples with verifiable rewards for reinforcement learning. We further introduce WTB-Bench, a dedicated benchmark covering five subtasks to evaluate MLLMs performance on WTB inspection. Experiments show that BladeLM achieves the best average performance among open-source MLLMs on WTB-Bench, and transfers to the general industrial anomaly benchmark MMAD with 76.96% average accuracy. Under out-of-distribution shifts, BladeLM obtains the smallest average F1 drop of 18.0% among compared methods. Ablation and attention analyses further indicate that our strategy improves spatially grounded diagnostic reasoning.
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/banner_video.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            To Be Updated: Demo of BladeLM.
+          </h2>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    </section>
 
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full">
-        <div class="content">
-          <h2 class="title is-3">Motivation</h2>
-         <p>
-              <img src="static/images/teaser.png" alt="Directional Weight Score" class="blend-img-background center-image" style="max-width: 80%; height: auto;" loading="lazy" />
-            </p>
-            <p>
-                  TBD.
-            </p>
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="abstract-panel">
+              <p class="abstract-lead">
+                BladeLM reframes wind turbine blade inspection as tool-augmented cognitive diagnosis, enabling MLLMs to localize visual evidence before producing explainable decisions.
+              </p>
+              <div class="abstract-chips" aria-label="BladeLM abstract highlights">
+                <!-- <span>Visual tool-augmented MLLM</span>
+                <span>8k CoT + 18k RL VQA</span>
+                <span>WTB-Bench + MMAD + OOD</span> -->
+              </div>
+              <div class="abstract-body">
+                <p>
+                  Wind turbine blade (WTB) image inspection is commonly formulated as closed-set defect detection, which limits generalization and provides little diagnostic explanation. Although multimodal large language models (MLLMs) offer open-ended visual reasoning, they often miss subtle defects and produce coarse-grained answers in industrial inspection scenarios.
+                </p>
+                <p>
+                  We propose BladeLM, a visual tool-augmented MLLM framework that reformulates WTB inspection as reasoning-driven cognitive diagnosis. BladeLM first inspects the global image, invokes visual tools to acquire localized evidence, and then reasons over observations to produce a diagnosis. To train this behavior, we design a data-centric post-training pipeline with 8k curated Chain-of-Thought trajectories for supervised fine-tuning and 18k closed-ended visual question-answering samples with verifiable rewards for reinforcement learning.
+                </p>
+                <p>
+                  We further introduce WTB-Bench, a dedicated benchmark covering five subtasks for evaluating MLLM performance on WTB inspection. BladeLM achieves 76.06% average accuracy on WTB-Bench, transfers to the general industrial anomaly benchmark MMAD with 76.96% average accuracy, and obtains the smallest average F1 drop of 18.0% under out-of-distribution shifts.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full">
-        <div class="content">
-          <h2 class="title is-3">Data Pipeline</h2>
-         <p>
-              <img src="static/images/data.png" alt="Directional Weight Score" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy" />
-            </p>
-            <p>
-                  TBD.
-            </p>
+    <section class="section hero is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <h2 class="title is-3">Key Takeaways</h2>
+              <div class="takeaway-grid">
+                <div class="takeaway-card">
+                  <span class="takeaway-kicker">Explainable</span>
+                  <h3>From Labels to Reasoning</h3>
+                  <p>BladeLM moves beyond closed-set detection by producing spatially grounded diagnostic traces that users can inspect.</p>
+                </div>
+                <div class="takeaway-card">
+                  <span class="takeaway-kicker">Fine-Grained</span>
+                  <h3>Localized Visual Evidence</h3>
+                  <p>The model actively marks suspicious regions and reasons over tool-generated observations before finalizing defect labels.</p>
+                </div>
+                <div class="takeaway-card">
+                  <span class="takeaway-kicker">Generalizable</span>
+                  <h3>Generalizable Inspection</h3>
+                  <p>Strong WTB-Bench, MMAD, and OOD results suggest that explicit evidence acquisition improves industrial anomaly reasoning.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full">
-        <div class="content">
-          <h2 class="title is-3">Method</h2>
-         <p>
-              <img src="static/images/method.png" alt="Directional Weight Score" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy" />
-            </p>
-            <p>
-                  TBD.
-            </p>
+    <section class="section hero is-light is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <h2 class="title is-3">Motivation</h2>
+              <p>
+                Traditional WTB inspection pipelines are usually trained as closed-set detectors or segmenters: they can output bounding boxes and labels for predefined defects, but they provide limited reasoning about causes, risks, and maintenance implications. General MLLMs improve flexibility, yet they often overlook low-contrast or scale-varying blade defects and may return plausible but visually ungrounded answers.
+              </p>
+              <p>
+                BladeLM treats inspection as a multi-turn diagnostic process. It first scans the full image, identifies suspicious areas, uses visual tools to mark or zoom into local evidence, and then verifies the defect category with explicit reasoning. This turns the output from a single label into an inspectable diagnostic trace.
+              </p>
+              <img src="static/images/teaser.png" alt="Paradigm shift from discriminative perception to BladeLM cognitive diagnosis." class="section-figure motivation-figure" loading="lazy">
+              <p class="figure-caption motivation-caption">
+                Figure 2. Existing expert detectors and general MLLMs each miss part of the diagnosis workflow; BladeLM connects localization, inspection, and explanation.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full">
-        <div class="content">
-          <h2 class="title is-3">Visualization</h2>
-         <p>
-              <img src="static/images/case.png" alt="Directional Weight Score" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy" />
-            </p>
-            <p>
-                  TBD.
-            </p>
+    <section class="section hero is-light is-small" id="wtb-bench">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <h2 class="title is-3">Data Pipeline and WTB-Bench</h2>
+              <p>
+                The training and evaluation data are curated from Roboflow object detection datasets, public WTB datasets including DTU-Drone and Blade30, and self-annotated private data. The pipeline removes near-duplicate images with perceptual hashing and DBSCAN clustering, normalizes heterogeneous defect labels into a canonical taxonomy, and generates image-question-answer triplets from structured annotations.
+              </p>
+              <p>
+                To create reasoning supervision, GPT-4o synthesizes multi-turn diagnostic trajectories with thinking, tool-call, and answer tags. DeepSeek-V3 review and human verification filter ambiguous or noisy samples. The final post-training data contains about 8k high-quality diagnostic instructions for SFT and 18k closed-ended VQA pairs for RL across 9 defect types.
+              </p>
+              <div class="highlight-grid">
+                <div class="highlight-card">
+                  <span class="highlight-number">8k</span>
+                  <span class="highlight-label">SFT diagnostic trajectories</span>
+                </div>
+                <div class="highlight-card">
+                  <span class="highlight-number">18k</span>
+                  <span class="highlight-label">RL VQA samples</span>
+                </div>
+                <div class="highlight-card">
+                  <span class="highlight-number">1.2k</span>
+                  <span class="highlight-label">WTB-Bench questions</span>
+                </div>
+                <div class="highlight-card">
+                  <span class="highlight-number">5</span>
+                  <span class="highlight-label">diagnostic subtasks</span>
+                </div>
+              </div>
+              <p>
+                WTB-Bench evaluates zero-shot diagnostic capability through existence, counting, classification, localization, and analysis questions. The benchmark is deduplicated from the training data and manually reviewed to reduce leakage and preserve professional validity.
+              </p>
+              <img src="static/images/data.png" alt="BladeLM data construction and WTB-Bench composition." class="section-figure" loading="lazy">
+              <p class="figure-caption">
+                Figure 3. Data construction pipeline and WTB-Bench composition, covering VQA generation, CoT synthesis, verification, and five diagnostic subtasks.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
+    <section class="section hero is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <h2 class="title is-3">Method</h2>
+              <p>
+                BladeLM is an agentic vision-language reasoning framework built on a Qwen3-VL-4B backbone. Given an image-query pair, the model performs a coarse global inspection, invokes a drawing tool to obtain a marked intermediate image, re-examines the localized evidence, and returns a structured final diagnosis.
+              </p>
+              <p>
+                The two-stage post-training strategy combines supervised fine-tuning and reinforcement learning. SFT teaches expert-style trajectories that interleave reasoning and tool use. The RL stage uses Dr. GRPO with a composite verifiable reward: format reward for valid reasoning and answer tags, accuracy reward for the closed-ended decision, IoU reward for spatial grounding, and tool reward for appropriate visual tool interaction.
+              </p>
+              <img src="static/images/method.png" alt="BladeLM framework and two-stage post-training strategy." class="section-figure" loading="lazy">
+              <p class="figure-caption">
+                Figure 4. BladeLM uses a two-stage post-training strategy to learn multi-turn reasoning, tool invocation, and grounded diagnostic answers.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+    </section>
+
+    <section class="section hero is-light is-small" id="results">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <h2 class="title is-3">Results</h2>
+              <div class="metric-grid">
+                <div class="metric-card">
+                  <span class="metric-value">76.06</span>
+                  <span class="metric-label">WTB-Bench Avg.</span>
+                  <span class="metric-detail">+13.73 over Qwen3-VL-4B</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value">76.96</span>
+                  <span class="metric-label">MMAD Avg.</span>
+                  <span class="metric-detail">Zero-shot industrial transfer</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value">18.0</span>
+                  <span class="metric-label">OOD F1 Drop</span>
+                  <span class="metric-detail">Smallest drop among compared methods</span>
+                </div>
+              </div>
+              <p>
+                On WTB-Bench, BladeLM reaches 76.06% average accuracy with a 4B backbone, outperforming the Qwen3-VL-4B base model by 13.73 percentage points and Qwen3-VL-32B by 8.81 percentage points. The gains are strongest on fine-grained tasks such as counting, classification, and localization, indicating that tool-augmented post-training improves localized visual evidence use rather than only instruction following.
+              </p>
+              <div class="table-card">
+                <div class="table-title">
+                  <span>WTB-Bench Zero-Shot Accuracy (%)</span>
+                  <span class="table-note">Best values are highlighted.</span>
+                </div>
+                <div class="table-scroll" role="region" aria-label="WTB-Bench performance table" tabindex="0">
+                  <table class="research-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Model</th>
+                        <th scope="col">Scale</th>
+                        <th scope="col">Existence</th>
+                        <th scope="col">Counting</th>
+                        <th scope="col">Classification</th>
+                        <th scope="col">Localization</th>
+                        <th scope="col">Analysis</th>
+                        <th scope="col">Average</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Claude-4.5-haiku</th>
+                        <td>-</td>
+                        <td>75.27</td>
+                        <td>45.45</td>
+                        <td>44.19</td>
+                        <td>46.15</td>
+                        <td>86.55</td>
+                        <td>65.25</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Claude-4.6-sonnet</th>
+                        <td>-</td>
+                        <td>80.92</td>
+                        <td>50.27</td>
+                        <td>48.06</td>
+                        <td>62.09</td>
+                        <td>93.45</td>
+                        <td>69.25</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">GPT-4o</th>
+                        <td>-</td>
+                        <td>80.57</td>
+                        <td>63.10</td>
+                        <td>54.26</td>
+                        <td>63.74</td>
+                        <td>94.48</td>
+                        <td>73.08</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">GPT-5.5</th>
+                        <td>-</td>
+                        <td>85.87</td>
+                        <td>55.61</td>
+                        <td>60.08</td>
+                        <td>73.08</td>
+                        <td>95.86</td>
+                        <td>76.08</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Gemini-3-flash</th>
+                        <td>-</td>
+                        <td class="best-score">89.05</td>
+                        <td>57.75</td>
+                        <td>62.40</td>
+                        <td>73.08</td>
+                        <td class="best-score">96.21</td>
+                        <td>77.75</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Gemini-3.1-pro</th>
+                        <td>-</td>
+                        <td>84.45</td>
+                        <td>64.71</td>
+                        <td class="best-score">66.67</td>
+                        <td class="best-score">76.92</td>
+                        <td class="best-score">96.21</td>
+                        <td class="best-score">79.25</td>
+                      </tr>
+                    </tbody>
+                    <tbody class="table-group">
+                      <tr>
+                        <th scope="row">LLaVA-1.5</th>
+                        <td>7B</td>
+                        <td>57.95</td>
+                        <td>28.34</td>
+                        <td>24.03</td>
+                        <td>25.27</td>
+                        <td>24.83</td>
+                        <td>33.08</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">LLaVA-NeXT</th>
+                        <td>8B</td>
+                        <td>63.96</td>
+                        <td>42.78</td>
+                        <td>48.06</td>
+                        <td>52.20</td>
+                        <td>75.52</td>
+                        <td>58.25</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">GLM-4.1V</th>
+                        <td>9B</td>
+                        <td>52.30</td>
+                        <td>41.71</td>
+                        <td>53.49</td>
+                        <td>54.95</td>
+                        <td>86.90</td>
+                        <td>59.67</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">InternVL3</th>
+                        <td>8B</td>
+                        <td>66.78</td>
+                        <td>52.94</td>
+                        <td>50.00</td>
+                        <td>56.59</td>
+                        <td>87.59</td>
+                        <td>64.50</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Qwen2.5-VL</th>
+                        <td>7B</td>
+                        <td>49.82</td>
+                        <td>50.80</td>
+                        <td>50.78</td>
+                        <td>53.30</td>
+                        <td>79.31</td>
+                        <td>57.83</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Qwen3-VL</th>
+                        <td>2B</td>
+                        <td>60.07</td>
+                        <td>46.52</td>
+                        <td>48.45</td>
+                        <td>48.90</td>
+                        <td>83.45</td>
+                        <td>59.42</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Qwen3-VL</th>
+                        <td>4B</td>
+                        <td>65.37</td>
+                        <td>51.34</td>
+                        <td>46.90</td>
+                        <td>56.59</td>
+                        <td>83.79</td>
+                        <td>62.33</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Qwen3-VL</th>
+                        <td>8B</td>
+                        <td>67.49</td>
+                        <td>49.73</td>
+                        <td>48.84</td>
+                        <td>58.24</td>
+                        <td>84.83</td>
+                        <td>63.50</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Qwen3-VL</th>
+                        <td>32B</td>
+                        <td>68.20</td>
+                        <td>58.29</td>
+                        <td>54.65</td>
+                        <td>65.93</td>
+                        <td>84.14</td>
+                        <td>67.25</td>
+                      </tr>
+                      <tr class="ours-row">
+                        <th scope="row">BladeLM (ours)</th>
+                        <td>4B</td>
+                        <td>84.05</td>
+                        <td class="best-score">70.94</td>
+                        <td>62.73</td>
+                        <td class="best-score">76.92</td>
+                        <td>88.83</td>
+                        <td>76.06</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p>
+                BladeLM also transfers to MMAD, a general industrial anomaly benchmark outside the WTB domain, achieving 76.96% average accuracy and clear gains on defect classification, localization, description, and analysis. Under OOD shifts, BladeLM maintains the best robustness among compared methods with an average F1 drop of only 18.0%.
+              </p>
+              <div class="table-card">
+                <div class="table-title">
+                  <span>MMAD Zero-Shot Accuracy (%)</span>
+                  <span class="table-note">Open-source MLLMs under the standard zero-shot setting.</span>
+                </div>
+                <div class="table-scroll" role="region" aria-label="MMAD performance table" tabindex="0">
+                  <table class="research-table grouped-table">
+                    <thead>
+                      <tr>
+                        <th scope="col" rowspan="2">Model</th>
+                        <th scope="colgroup" colspan="1">Anomaly</th>
+                        <th scope="colgroup" colspan="4">Defect</th>
+                        <th scope="colgroup" colspan="2">Object</th>
+                        <th scope="col" rowspan="2">Average</th>
+                      </tr>
+                      <tr>
+                        <th scope="col">Detection</th>
+                        <th scope="col">Classification</th>
+                        <th scope="col">Localization</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Analysis</th>
+                        <th scope="col">Classification</th>
+                        <th scope="col">Analysis</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">LLaVA-1.5-7B</th>
+                        <td>54.01</td>
+                        <td>38.22</td>
+                        <td>40.59</td>
+                        <td>50.43</td>
+                        <td>68.74</td>
+                        <td>70.74</td>
+                        <td>70.58</td>
+                        <td>56.19</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">LLaVA-NeXT-8B</th>
+                        <td>57.91</td>
+                        <td>43.15</td>
+                        <td>49.21</td>
+                        <td>61.56</td>
+                        <td>75.60</td>
+                        <td>71.56</td>
+                        <td>72.33</td>
+                        <td>61.62</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">InternVL3-8B</th>
+                        <td>60.88</td>
+                        <td>50.57</td>
+                        <td>59.99</td>
+                        <td>66.33</td>
+                        <td>76.90</td>
+                        <td>86.67</td>
+                        <td>84.80</td>
+                        <td>69.45</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">GLM-4.1V-9B</th>
+                        <td>61.55</td>
+                        <td>52.90</td>
+                        <td>59.21</td>
+                        <td>65.85</td>
+                        <td>81.63</td>
+                        <td class="best-score">93.81</td>
+                        <td>84.65</td>
+                        <td>71.37</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Qwen2.5-VL-7B</th>
+                        <td>60.16</td>
+                        <td>49.94</td>
+                        <td>57.43</td>
+                        <td>60.37</td>
+                        <td>75.51</td>
+                        <td>93.43</td>
+                        <td>84.90</td>
+                        <td>68.82</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Qwen3-VL-4B</th>
+                        <td>65.87</td>
+                        <td>53.90</td>
+                        <td>58.58</td>
+                        <td>66.40</td>
+                        <td>77.93</td>
+                        <td>92.13</td>
+                        <td>83.37</td>
+                        <td>71.17</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Qwen3-VL-8B</th>
+                        <td>67.20</td>
+                        <td>58.15</td>
+                        <td>58.74</td>
+                        <td>66.88</td>
+                        <td>77.40</td>
+                        <td>92.70</td>
+                        <td>83.74</td>
+                        <td>72.12</td>
+                      </tr>
+                      <tr class="ours-row">
+                        <th scope="row">BladeLM (ours)</th>
+                        <td class="best-score">69.49</td>
+                        <td class="best-score">72.73</td>
+                        <td class="best-score">80.94</td>
+                        <td class="best-score">85.27</td>
+                        <td class="best-score">87.84</td>
+                        <td>93.27</td>
+                        <td class="best-score">90.59</td>
+                        <td class="best-score">76.96</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <img src="static/images/ood.png" alt="OOD robustness comparison for BladeLM and baseline methods." class="section-figure medium-figure" loading="lazy">
+              <p class="figure-caption">
+                Figure 5. OOD robustness comparison across ID, OOD-Env, and OOD-Sem splits. BladeLM keeps the lowest average F1 drop.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-small">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <div class="content">
+              <h2 class="title is-3">Visual Reasoning Analysis</h2>
+              <p>
+                Attention analysis shows that BladeLM progressively shifts attention toward annotated defect regions from the first to the second reasoning turn, especially in deeper layers. Compared with the baseline, BladeLM allocates more attention to visual evidence during tool-augmented diagnosis, which helps mitigate visual attention diminishing during long reasoning.
+              </p>
+              <img src="static/images/visualization.png" alt="Grounding heatmaps and token attention allocation during BladeLM reasoning." class="section-figure" loading="lazy">
+              <p class="figure-caption">
+                Figure 6. Visual grounding and attention allocation show BladeLM focusing more strongly on defect-relevant visual tokens during tool-augmented reasoning.
+              </p>
+              <p>
+                Qualitative trajectories illustrate how the model handles single-defect, multi-defect, and no-defect cases. BladeLM first inspects the image, calls the visual tool to mark suspicious regions when needed, receives visual feedback, and then verifies whether the marked evidence supports the final defect label.
+              </p>
+              <img src="static/images/case.png" alt="Example diagnostic trajectories from BladeLM." class="section-figure" loading="lazy">
+              <p class="figure-caption">
+                Figure 7. Example diagnostic trajectories for single-defect, multi-defect, and no-defect cases, including tool calls and verification steps.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@article{he2026bladelm,
+  title={BladeLM: Towards Generalizable, Explainable and Fine-Grained Wind Turbine Blade Diagnosis with MLLMs},
+  author={He, Jingtai and Kang, Xingjian and Sun, Siming and Meng, Shiyuan and Yang, Qinmin and Meng, Wenchao},
+  journal={Preprint},
+  year={2026},
+  url={https://withtai.github.io/bladelm-project-page}
 }</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
+      </div>
+    </section>
 
+    <button class="scroll-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </main>
 
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>, which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br>
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+  </footer>
+</body>
+</html>
